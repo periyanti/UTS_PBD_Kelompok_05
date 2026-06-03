@@ -218,38 +218,57 @@ Nilai akhir dihitung menggunakan rumus:
 
 # 📸 Screenshot Hasil Program
 
+# 📸 Screenshot Hasil Program
+
 ## Data Awal
 
-Tambahkan screenshot berikut:
+### Tabel Dosen
 
-* Tabel Mahasiswa
-* Tabel Dosen
-* Tabel Mata Kuliah
-* Tabel Grade Nilai
-* Tabel Nilai Praktikum (Sebelum Rekap)
-* Tabel Log Rekap Nilai (Kosong)
+![Tabel Dosen](dosen.png)
+
+### Tabel Mata Kuliah
+
+![Tabel Mata Kuliah](matakuliah.png)
+
+### Tabel Grade Nilai
+
+![Tabel Grade Nilai](grade%20nilai.png)
+
+### Tabel Nilai Praktikum
+
+![Tabel Nilai Praktikum](nilai%20praktikum.png)
+
+### Tabel Log Rekap Nilai
+
+![Tabel Log Rekap Nilai](log%20rekap%20nilai.png)
+
+---
 
 ## Hasil Eksekusi Procedure
 
-Tambahkan screenshot:
-
 ### CALL rekap_semua_nilai();
 
-📷 Screenshot output procedure
+📷 Tambahkan screenshot hasil eksekusi procedure:
 
-📷 Screenshot tabel nilai_praktikum setelah rekap
+![Hasil Rekap Semua Nilai](rekap%20semua%20nilai.png)
 
-📷 Screenshot tabel log_rekap_nilai
+### Tabel Nilai Praktikum Setelah Rekap
+
+![Nilai Praktikum Setelah Rekap](nilai%20praktikum%20setelah%20rekap.png)
+
+### Tabel Log Rekap Nilai Setelah Rekap
+
+![Log Rekap Setelah Rekap](log%20rekap%20nilai%20setelah%20rekap.png)
+
+---
 
 ### CALL rekap_nilai_per_mk('MK001');
 
-📷 Screenshot output procedure
+![Rekap MK001](rekap%20mk001.png)
 
-📷 Screenshot tabel hasil rekap MK001
+### Tabel Log Setelah Rekap MK001
 
-📷 Screenshot tabel log setelah proses
-
----
+![Log Rekap MK001](log%20rekap%20mk001.png)
 
 # ✅ Kesimpulan
 
