@@ -216,7 +216,7 @@ Nilai akhir dihitung menggunakan rumus:
 
 ---
 
-# 📸 Screenshot Hasil Program
+
 
 # 📸 Screenshot Hasil Program
 
@@ -243,32 +243,6 @@ Nilai akhir dihitung menggunakan rumus:
 ![Tabel Log Rekap Nilai](log%20rekap%20nilai.png)
 
 ---
-
-## Hasil Eksekusi Procedure
-
-### CALL rekap_semua_nilai();
-
-📷 Tambahkan screenshot hasil eksekusi procedure:
-
-![Hasil Rekap Semua Nilai](rekap%20semua%20nilai.png)
-
-### Tabel Nilai Praktikum Setelah Rekap
-
-![Nilai Praktikum Setelah Rekap](nilai%20praktikum%20setelah%20rekap.png)
-
-### Tabel Log Rekap Nilai Setelah Rekap
-
-![Log Rekap Setelah Rekap](log%20rekap%20nilai%20setelah%20rekap.png)
-
----
-
-### CALL rekap_nilai_per_mk('MK001');
-
-![Rekap MK001](rekap%20mk001.png)
-
-### Tabel Log Setelah Rekap MK001
-
-![Log Rekap MK001](log%20rekap%20mk001.png)
 
 # ✅ Kesimpulan
 
