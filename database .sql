@@ -1,27 +1,16 @@
--- ============================================================
--- FILE: database.sql
--- Projek UTS Pemrograman Basis Data
--- Sistem Rekap Nilai Praktikum Mahasiswa
--- ============================================================
 
--- Buat dan gunakan database
 CREATE DATABASE IF NOT EXISTS uts_pbd_kelompok_05;
 USE uts_pbd_kelompok_05;
 
--- ============================================================
--- TABEL 1: dosen
--- ============================================================
-CREATE TABLE dosen (
+CREATE TABLE IF NOT EXISTS dosen (
     kode_dosen  VARCHAR(10)  NOT NULL,
     nama_dosen  VARCHAR(100) NOT NULL,
     email       VARCHAR(100) NOT NULL,
     PRIMARY KEY (kode_dosen)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ============================================================
--- TABEL 2: mahasiswa
--- ============================================================
-CREATE TABLE mahasiswa (
+
+CREATE TABLE IF NOT EXISTS mahasiswa (
     nim      VARCHAR(15)  NOT NULL,
     nama     VARCHAR(100) NOT NULL,
     kelas    VARCHAR(10)  NOT NULL,
@@ -29,10 +18,8 @@ CREATE TABLE mahasiswa (
     PRIMARY KEY (nim)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ============================================================
--- TABEL 3: mata_kuliah
--- ============================================================
-CREATE TABLE mata_kuliah (
+
+CREATE TABLE IF NOT EXISTS mata_kuliah (
     kode_mk    VARCHAR(10)  NOT NULL,
     nama_mk    VARCHAR(100) NOT NULL,
     sks        TINYINT      NOT NULL,
@@ -44,10 +31,8 @@ CREATE TABLE mata_kuliah (
         ON UPDATE CASCADE ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ============================================================
--- TABEL 4: grade_nilai
--- ============================================================
-CREATE TABLE grade_nilai (
+
+CREATE TABLE IF NOT EXISTS grade_nilai (
     grade       VARCHAR(5)     NOT NULL,
     bobot       DECIMAL(4,2)   NOT NULL,
     nilai_bawah DECIMAL(6,2)   NOT NULL,
@@ -55,10 +40,7 @@ CREATE TABLE grade_nilai (
     PRIMARY KEY (grade)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ============================================================
--- TABEL 5: nilai_praktikum
--- ============================================================
-CREATE TABLE nilai_praktikum (
+CREATE TABLE IF NOT EXISTS nilai_praktikum (
     id_nilai     INT            NOT NULL AUTO_INCREMENT,
     nim          VARCHAR(15)    NOT NULL,
     kode_mk      VARCHAR(10)    NOT NULL,
@@ -70,15 +52,14 @@ CREATE TABLE nilai_praktikum (
     bobot        DECIMAL(4,2)   DEFAULT NULL,
     status_lulus VARCHAR(15)    DEFAULT NULL,
     PRIMARY KEY (id_nilai),
-    CONSTRAINT fk_np_nim    FOREIGN KEY (nim)     REFERENCES mahasiswa(nim)      ON UPDATE CASCADE ON DELETE RESTRICT,
-    CONSTRAINT fk_np_mk     FOREIGN KEY (kode_mk) REFERENCES mata_kuliah(kode_mk) ON UPDATE CASCADE ON DELETE RESTRICT,
-    CONSTRAINT fk_np_grade  FOREIGN KEY (grade)   REFERENCES grade_nilai(grade)   ON UPDATE CASCADE ON DELETE SET NULL
+    CONSTRAINT fk_np_nim FOREIGN KEY (nim)
+        REFERENCES mahasiswa(nim) ON UPDATE CASCADE ON DELETE RESTRICT,
+    CONSTRAINT fk_np_mk  FOREIGN KEY (kode_mk)
+        REFERENCES mata_kuliah(kode_mk) ON UPDATE CASCADE ON DELETE RESTRICT
+    -- fk_np_grade DIHAPUS: grade divalidasi via logika CASE di procedure
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- ============================================================
--- TABEL 6: log_rekap_nilai
--- ============================================================
-CREATE TABLE log_rekap_nilai (
+CREATE TABLE IF NOT EXISTS log_rekap_nilai (
     id_log       INT            NOT NULL AUTO_INCREMENT,
     nim          VARCHAR(15)    NOT NULL,
     kode_mk      VARCHAR(10)    NOT NULL,
