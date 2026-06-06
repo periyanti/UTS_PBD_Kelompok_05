@@ -1,4 +1,3 @@
-
 CREATE DATABASE IF NOT EXISTS uts_pbd_kelompok_05;
 USE uts_pbd_kelompok_05;
 
