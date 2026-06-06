@@ -1,29 +1,16 @@
--- ============================================================
--- FILE: data_awal.sql
--- Projek UTS Pemrograman Basis Data
--- Sistem Rekap Nilai Praktikum Mahasiswa
--- ============================================================
-
 USE uts_pbd_kelompok_05;
 
--- ============================================================
--- DATA DOSEN (minimal 2)
--- ============================================================
+
 INSERT INTO dosen (kode_dosen, nama_dosen, email) VALUES
 ('D001', 'Abdul Malik, S.Kom., M.Cs.', 'abdulmalik@universitasmb.ac.id'),
 ('D002', 'Hasriani, S.Kom., M.Kom.',    'hasriani@universitasmb.ac.id');
 
--- ============================================================
--- DATA MATA KULIAH (minimal 3)
--- ============================================================
+
 INSERT INTO mata_kuliah (kode_mk, nama_mk, sks, semester, kode_dosen) VALUES
 ('MK001', 'Pemrograman Basis Data',  3, 4, 'D001'),
 ('MK002', 'Algoritma dan Struktur Data', 3, 3, 'D001'),
 ('MK003', 'Rekayasa Perangkat Lunak',    3, 5, 'D002');
 
--- ============================================================
--- DATA GRADE NILAI (10 grade sesuai ketentuan)
--- ============================================================
 INSERT INTO grade_nilai (grade, bobot, nilai_bawah, nilai_atas) VALUES
 ('A',   4.00,  93.00, 100.00),
 ('A-',  3.75,  85.00,  92.99),
@@ -36,9 +23,7 @@ INSERT INTO grade_nilai (grade, bobot, nilai_bawah, nilai_atas) VALUES
 ('D',   1.00,  40.00,  55.99),
 ('E',   0.00,   0.00,  39.99);
 
--- ============================================================
--- DATA MAHASISWA (minimal 20)
--- ============================================================
+
 INSERT INTO mahasiswa (nim, nama, kelas, angkatan) VALUES
 ('2411001', 'fadhila',         'IF-A', 2024),
 ('2411002', 'nur fahila',        'IF-A', 2024),
@@ -61,11 +46,7 @@ INSERT INTO mahasiswa (nim, nama, kelas, angkatan) VALUES
 ('2411019', 'aulia',     'IF-B', 2024),
 ('2411020', 'winda',        'IF-A', 2024);
 
--- ============================================================
--- DATA NILAI PRAKTIKUM (minimal 20, nilai bervariasi)
--- nilai_akhir, grade, bobot, status_lulus = NULL (diisi procedure)
--- Distribusi: MK001 (10 baris), MK002 (7 baris), MK003 (3 baris)
--- ============================================================
+
 INSERT INTO nilai_praktikum (nim, kode_mk, nilai_tugas, nilai_kuis, nilai_uts) VALUES
 -- MK001 - Pemrograman Basis Data
 ('2411001', 'MK001',  95, 90, 97),   -- nilai_akhir ~93.9 -> A
